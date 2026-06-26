@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "skills": [
+    {
+      "id": "skill.weather-brief",
+      "name": "Weather Brief",
+      "category": "weather",
+      "status": "active",
+      "version": "1.0.0",
+      "owner": "agent-runtime",
+      "description": "Convert raw weather data into concise decision-ready advice.",
+      "whenToUse": ["天气", "温度", "湿度", "降雨", "风速", "体感", "weather"],
+      "instruction": "When weather data is available, summarize current conditions, risk, and one practical suggestion for the user."
+    },
+    {
+      "id": "skill.web-research",
+      "name": "Web Research",
+      "category": "retrieval",
+      "status": "active",
+      "version": "1.0.0",
+      "owner": "agent-runtime",
+      "description": "Turn search results into grounded summaries and comparisons.",
+      "whenToUse": ["最新", "新闻", "官网", "版本", "更新", "release", "official", "latest"],
+      "instruction": "When web search results are returned, answer from retrieved evidence instead of memory and call out uncertainty clearly."
+    },
+    {
+      "id": "skill.local-guide",
+      "name": "Local Guide",
+      "category": "local-discovery",
+      "status": "active",
+      "version": "1.0.0",
+      "owner": "agent-runtime",
+      "description": "Rank nearby places by intent, distance, and likely usefulness.",
+      "whenToUse": ["附近", "周边", "咖啡", "餐厅", "医院", "商场", "nearby", "restaurant", "coffee"],
+      "instruction": "For nearby recommendations, prefer a short ranked shortlist with reason, distance, and what kind of user each option suits."
+    },
+    {
+      "id": "skill.attachment-reader",
+      "name": "Attachment Reader",
+      "category": "context",
+      "status": "active",
+      "version": "1.0.0",
+      "owner": "agent-runtime",
+      "description": "Treat uploaded files as task context instead of ignoring them.",
+      "whenToUse": ["附件", "文件", "文档", "图片", "attachment", "document", "file"],
+      "instruction": "When attachments are present, incorporate their extracted content into the answer and mention any modality limits."
+    }
+  ]
+}

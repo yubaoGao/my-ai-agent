@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ChatSession {
+  id        String        @id @default(cuid()) @db.VarChar(191)
+  userId    String        @default("local-user") @db.VarChar(191)
+  title     String        @db.VarChar(255)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  messages  ChatMessage[]
+  agentRuns AgentRun[]
+
+  @@index([userId, updatedAt])
+}
+
+model ChatMessage {
+  id         String      @id @default(cuid()) @db.VarChar(191)
+  sessionId  String      @db.VarChar(191)
+  role       String      @db.VarChar(32)
+  content    String      @db.LongText
+  tokenCount Int         @default(0)
+  toolCalls  Json?
+  runContext Json?
+  metadata   Json?
+  createdAt  DateTime    @default(now())
+  session    ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([sessionId, createdAt])
+  @@index([role])
+}
+
+model AgentRun {
+  id                 String      @id @default(cuid()) @db.VarChar(191)
+  sessionId          String      @db.VarChar(191)
+  userMessageId      String      @db.VarChar(191)
+  assistantMessageId String?     @db.VarChar(191)
+  mode               String      @db.VarChar(32)
+  model              String      @db.VarChar(128)
+  status             String      @db.VarChar(32)
+  error              String?     @db.Text
+  inputTokens        Int?
+  outputTokens       Int?
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+  session            ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  toolCalls          ToolCall[]
+
+  @@index([sessionId, createdAt])
+  @@index([userMessageId])
+}
+
+model ToolCall {
+  id         String   @id @default(cuid()) @db.VarChar(191)
+  runId      String   @db.VarChar(191)
+  toolCallId String   @db.VarChar(191)
+  toolName   String   @db.VarChar(128)
+  args       Json
+  result     Json?
+  error      String?  @db.Text
+  status     String   @db.VarChar(32)
+  startedAt  DateTime
+  finishedAt DateTime?
+  createdAt  DateTime @default(now())
+  run        AgentRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  @@index([runId])
+  @@index([toolName])
+}

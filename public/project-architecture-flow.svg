@@ -1,0 +1,215 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Agent 通用智能助手数据流架构图</title>
+  <desc id="desc">按照数据流动方向展示用户输入、React 前端、请求构建、API 路由、Agent Runtime、能力编排、模型工具执行和前端渲染的完整流程。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="0.48" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="mainCard" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFF7ED"/>
+    </linearGradient>
+    <linearGradient id="runtimeCard" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ECFEFF"/>
+      <stop offset="1" stop-color="#F0FDF4"/>
+    </linearGradient>
+    <linearGradient id="supportCard" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto">
+      <path d="M2 2L10 6L2 10V2Z" fill="#2563EB"/>
+    </marker>
+    <marker id="softArrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M2 2L10 6L2 10V2Z" fill="#94A3B8"/>
+    </marker>
+    <style>
+      .title { font: 800 38px Arial, "Microsoft YaHei", sans-serif; fill: #1E293B; }
+      .subtitle { font: 400 17px Arial, "Microsoft YaHei", sans-serif; fill: #64748B; }
+      .step { font: 800 13px Arial, "Microsoft YaHei", sans-serif; fill: #2563EB; letter-spacing: 0.08em; }
+      .card-title { font: 800 18px Arial, "Microsoft YaHei", sans-serif; fill: #0F172A; }
+      .card-text { font: 400 13px Arial, "Microsoft YaHei", sans-serif; fill: #475569; }
+      .support-title { font: 800 15px Arial, "Microsoft YaHei", sans-serif; fill: #334155; }
+      .support-text { font: 400 12px Arial, "Microsoft YaHei", sans-serif; fill: #64748B; }
+      .lane-label { font: 800 14px Arial, "Microsoft YaHei", sans-serif; fill: #EA580C; letter-spacing: 0.08em; }
+      .main-line { stroke: #2563EB; stroke-width: 4; marker-end: url(#arrow); }
+      .support-line { stroke: #94A3B8; stroke-width: 2.2; stroke-dasharray: 6 6; marker-end: url(#softArrow); }
+      .thin-line { stroke: #CBD5E1; stroke-width: 1.6; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" rx="34" fill="url(#bg)"/>
+  <circle cx="135" cy="150" r="130" fill="#FDBA74" opacity="0.16"/>
+  <circle cx="1480" cy="790" r="170" fill="#93C5FD" opacity="0.18"/>
+  <path d="M70 106C280 42 425 62 620 104C825 148 1015 144 1245 88C1380 55 1490 74 1540 108" stroke="#FED7AA" stroke-width="18" stroke-linecap="round" opacity="0.32"/>
+
+  <text x="800" y="68" text-anchor="middle" class="title">AI Agent 通用智能助手数据流架构图</text>
+  <text x="800" y="100" text-anchor="middle" class="subtitle">主链路只按一个方向流动：用户输入 → 前端请求 → API 归一化 → Agent 编排 → 模型/工具 → 事件流渲染</text>
+
+  <text x="80" y="150" class="lane-label">MAIN DATA FLOW</text>
+  <line x1="70" y1="168" x2="1530" y2="168" class="thin-line"/>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="200" width="170" height="150" rx="24" fill="url(#mainCard)" stroke="#FDBA74" stroke-width="2"/>
+    <text x="82" y="230" class="step">STEP 01</text>
+    <text x="140" y="260" text-anchor="middle" class="card-title">用户 / 浏览器</text>
+    <text x="140" y="287" text-anchor="middle" class="card-text">输入问题</text>
+    <text x="140" y="309" text-anchor="middle" class="card-text">选择模式</text>
+    <text x="140" y="331" text-anchor="middle" class="card-text">上传附件</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="260" y="200" width="180" height="150" rx="24" fill="url(#mainCard)" stroke="#FDBA74" stroke-width="2"/>
+    <text x="287" y="230" class="step">STEP 02</text>
+    <text x="350" y="260" text-anchor="middle" class="card-title">React 18 前端</text>
+    <text x="350" y="287" text-anchor="middle" class="card-text">src/app/page.tsx</text>
+    <text x="350" y="309" text-anchor="middle" class="card-text">会话 / 附件 / 状态</text>
+    <text x="350" y="331" text-anchor="middle" class="card-text">AbortController</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="475" y="200" width="180" height="150" rx="24" fill="url(#mainCard)" stroke="#FDBA74" stroke-width="2"/>
+    <text x="502" y="230" class="step">STEP 03</text>
+    <text x="565" y="260" text-anchor="middle" class="card-title">请求构建</text>
+    <text x="565" y="287" text-anchor="middle" class="card-text">无附件：JSON</text>
+    <text x="565" y="309" text-anchor="middle" class="card-text">有附件：FormData</text>
+    <text x="565" y="331" text-anchor="middle" class="card-text">messages + mode</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="690" y="200" width="180" height="150" rx="24" fill="url(#mainCard)" stroke="#7DD3FC" stroke-width="2"/>
+    <text x="717" y="230" class="step">STEP 04</text>
+    <text x="780" y="260" text-anchor="middle" class="card-title">API 路由</text>
+    <text x="780" y="287" text-anchor="middle" class="card-text">api/agent/route.ts</text>
+    <text x="780" y="309" text-anchor="middle" class="card-text">解析 / 校验</text>
+    <text x="780" y="331" text-anchor="middle" class="card-text">附件文本截断</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="905" y="200" width="180" height="150" rx="24" fill="url(#runtimeCard)" stroke="#86EFAC" stroke-width="2"/>
+    <text x="932" y="230" class="step">STEP 05</text>
+    <text x="995" y="260" text-anchor="middle" class="card-title">Agent Runtime</text>
+    <text x="995" y="287" text-anchor="middle" class="card-text">src/lib/ai/agent.ts</text>
+    <text x="995" y="309" text-anchor="middle" class="card-text">构建上下文</text>
+    <text x="995" y="331" text-anchor="middle" class="card-text">拼装 instructions</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1120" y="200" width="180" height="150" rx="24" fill="url(#runtimeCard)" stroke="#86EFAC" stroke-width="2"/>
+    <text x="1147" y="230" class="step">STEP 06</text>
+    <text x="1210" y="260" text-anchor="middle" class="card-title">能力编排</text>
+    <text x="1210" y="287" text-anchor="middle" class="card-text">Skills Registry</text>
+    <text x="1210" y="309" text-anchor="middle" class="card-text">MCP Registry</text>
+    <text x="1210" y="331" text-anchor="middle" class="card-text">Harness Trace</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1335" y="200" width="210" height="150" rx="24" fill="#FFFFFF" stroke="#A78BFA" stroke-width="2"/>
+    <text x="1362" y="230" class="step">STEP 07</text>
+    <text x="1440" y="260" text-anchor="middle" class="card-title">模型与工具执行</text>
+    <text x="1440" y="287" text-anchor="middle" class="card-text">@openai/agents</text>
+    <text x="1440" y="309" text-anchor="middle" class="card-text">DeepSeek Chat</text>
+    <text x="1440" y="331" text-anchor="middle" class="card-text">tools.ts</text>
+  </g>
+
+  <line x1="225" y1="275" x2="260" y2="275" class="main-line"/>
+  <line x1="440" y1="275" x2="475" y2="275" class="main-line"/>
+  <line x1="655" y1="275" x2="690" y2="275" class="main-line"/>
+  <line x1="870" y1="275" x2="905" y2="275" class="main-line"/>
+  <line x1="1085" y1="275" x2="1120" y2="275" class="main-line"/>
+  <line x1="1300" y1="275" x2="1335" y2="275" class="main-line"/>
+
+  <text x="80" y="415" class="lane-label">SUPPORTING DATA USED BY EACH STEP</text>
+  <line x1="70" y1="433" x2="1530" y2="433" class="thin-line"/>
+
+  <line x1="350" y1="350" x2="350" y2="465" class="support-line"/>
+  <g filter="url(#shadow)">
+    <rect x="250" y="465" width="200" height="112" rx="22" fill="url(#supportCard)" stroke="#CBD5E1"/>
+    <text x="350" y="495" text-anchor="middle" class="support-title">前端本地状态</text>
+    <text x="350" y="520" text-anchor="middle" class="support-text">localStorage 保存 sessions</text>
+    <text x="350" y="542" text-anchor="middle" class="support-text">图片 createObjectURL 预览</text>
+    <text x="350" y="564" text-anchor="middle" class="support-text">工具面板与 Runtime 卡片</text>
+  </g>
+
+  <line x1="780" y1="350" x2="780" y2="465" class="support-line"/>
+  <g filter="url(#shadow)">
+    <rect x="680" y="465" width="200" height="112" rx="22" fill="url(#supportCard)" stroke="#CBD5E1"/>
+    <text x="780" y="495" text-anchor="middle" class="support-title">请求归一化</text>
+    <text x="780" y="520" text-anchor="middle" class="support-text">normalizeMessage</text>
+    <text x="780" y="542" text-anchor="middle" class="support-text">normalizeMode</text>
+    <text x="780" y="564" text-anchor="middle" class="support-text">UploadedAttachment</text>
+  </g>
+
+  <line x1="995" y1="350" x2="995" y2="465" class="support-line"/>
+  <g filter="url(#shadow)">
+    <rect x="895" y="465" width="200" height="112" rx="22" fill="url(#supportCard)" stroke="#CBD5E1"/>
+    <text x="995" y="495" text-anchor="middle" class="support-title">运行上下文</text>
+    <text x="995" y="520" text-anchor="middle" class="support-text">finalUserMessage</text>
+    <text x="995" y="542" text-anchor="middle" class="support-text">conversation input</text>
+    <text x="995" y="564" text-anchor="middle" class="support-text">stream event adapter</text>
+  </g>
+
+  <line x1="1210" y1="350" x2="1210" y2="465" class="support-line"/>
+  <g filter="url(#shadow)">
+    <rect x="1110" y="465" width="200" height="112" rx="22" fill="url(#supportCard)" stroke="#CBD5E1"/>
+    <text x="1210" y="495" text-anchor="middle" class="support-title">能力注册表</text>
+    <text x="1210" y="520" text-anchor="middle" class="support-text">skills/index.json</text>
+    <text x="1210" y="542" text-anchor="middle" class="support-text">mcp/servers.json</text>
+    <text x="1210" y="564" text-anchor="middle" class="support-text">plannedRoute + checks</text>
+  </g>
+
+  <line x1="1440" y1="350" x2="1440" y2="465" class="support-line"/>
+  <g filter="url(#shadow)">
+    <rect x="1340" y="465" width="200" height="112" rx="22" fill="url(#supportCard)" stroke="#CBD5E1"/>
+    <text x="1440" y="495" text-anchor="middle" class="support-title">外部能力</text>
+    <text x="1440" y="520" text-anchor="middle" class="support-text">高德 / Open-Meteo</text>
+    <text x="1440" y="542" text-anchor="middle" class="support-text">Tavily Search</text>
+    <text x="1440" y="564" text-anchor="middle" class="support-text">ip-api 定位</text>
+  </g>
+
+  <text x="80" y="642" class="lane-label">EVENT STREAM OUTPUT</text>
+  <line x1="70" y1="660" x2="1530" y2="660" class="thin-line"/>
+
+  <g filter="url(#shadow)">
+    <rect x="170" y="705" width="250" height="105" rx="24" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="295" y="737" text-anchor="middle" class="card-title">run-context</text>
+    <text x="295" y="764" text-anchor="middle" class="card-text">mode / plannedRoute</text>
+    <text x="295" y="786" text-anchor="middle" class="card-text">active skills / MCP / checks</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="500" y="705" width="250" height="105" rx="24" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="625" y="737" text-anchor="middle" class="card-title">tool-start / tool-end</text>
+    <text x="625" y="764" text-anchor="middle" class="card-text">工具名 / 参数</text>
+    <text x="625" y="786" text-anchor="middle" class="card-text">结果 / 错误 / 耗时</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="830" y="705" width="250" height="105" rx="24" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="955" y="737" text-anchor="middle" class="card-title">text-delta</text>
+    <text x="955" y="764" text-anchor="middle" class="card-text">模型文本增量</text>
+    <text x="955" y="786" text-anchor="middle" class="card-text">实时追加到 assistant 消息</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1160" y="705" width="250" height="105" rx="24" fill="#FFFFFF" stroke="#93C5FD" stroke-width="2"/>
+    <text x="1285" y="737" text-anchor="middle" class="card-title">done / error</text>
+    <text x="1285" y="764" text-anchor="middle" class="card-text">最终回答或错误</text>
+    <text x="1285" y="786" text-anchor="middle" class="card-text">更新 Markdown / 状态</text>
+  </g>
+
+  <line x1="420" y1="757" x2="500" y2="757" class="main-line"/>
+  <line x1="750" y1="757" x2="830" y2="757" class="main-line"/>
+  <line x1="1080" y1="757" x2="1160" y2="757" class="main-line"/>
+  <path d="M1440 577V620C1440 652 1410 682 1370 705" class="support-line"/>
+  <path d="M780 577V620C780 660 700 682 625 705" class="support-line"/>
+  <path d="M1210 577V620C1210 658 1240 680 1285 705" class="support-line"/>
+
+  <rect x="70" y="846" width="1460" height="34" rx="17" fill="#FFFFFF" opacity="0.85" stroke="#CBD5E1"/>
+  <text x="800" y="868" text-anchor="middle" class="support-title">读图顺序：先看上方 01 → 07 主链路，再看中间支撑数据，最后看底部事件流如何驱动前端展示。</text>
+</svg>

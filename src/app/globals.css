@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf4;
+  --foreground: #4b2e1f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: linear-gradient(180deg, #fffaf4 0%, #fdf2e9 100%);
+  color: #4b2e1f;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.prose {
+  --tw-prose-body: #5b3b2a;
+  --tw-prose-headings: #8c4b2f;
+  --tw-prose-lead: #7a5642;
+  --tw-prose-links: #b45309;
+  --tw-prose-bold: #4b2e1f;
+  --tw-prose-counters: #7a5642;
+  --tw-prose-bullets: #d97706;
+  --tw-prose-hr: #e7c9b0;
+  --tw-prose-quotes: #6b4a3a;
+  --tw-prose-quote-borders: #e7c9b0;
+  --tw-prose-captions: #8b6b5c;
+  --tw-prose-code: #b45309;
+  --tw-prose-pre-code: #5b3b2a;
+  --tw-prose-pre-bg: #fff3e6;
+  --tw-prose-th-borders: #e7c9b0;
+  --tw-prose-td-borders: #f1dccb;
+}
+
+.prose-invert {
+  --tw-prose-body: #5b3b2a;
+  --tw-prose-headings: #8c4b2f;
+  --tw-prose-lead: #7a5642;
+  --tw-prose-links: #b45309;
+  --tw-prose-bold: #4b2e1f;
+  --tw-prose-counters: #7a5642;
+  --tw-prose-bullets: #d97706;
+  --tw-prose-hr: #e7c9b0;
+  --tw-prose-quotes: #6b4a3a;
+  --tw-prose-quote-borders: #e7c9b0;
+  --tw-prose-captions: #8b6b5c;
+  --tw-prose-code: #b45309;
+  --tw-prose-pre-code: #5b3b2a;
+  --tw-prose-pre-bg: #fff3e6;
+  --tw-prose-th-borders: #e7c9b0;
+  --tw-prose-td-borders: #f1dccb;
+}
+
+.prose code::before,
+.prose code::after {
+  content: "" !important;
+}

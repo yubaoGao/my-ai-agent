@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mcp.maps",
+    "name": "Maps MCP",
+    "description": "Provides geocoding, nearby place search, and local discovery.",
+    "capabilities": ["geocode location", "search nearby POIs", "rank places by distance"],
+    "modes": ["default", "nearby"],
+    "enabled": true,
+    "adapter": "maps",
+    "provider": {
+      "name": "amap",
+      "transport": "http",
+      "baseUrl": "https://restapi.amap.com",
+      "auth": {
+        "type": "apiKey",
+        "envKey": "AMAP_WEB_SERVICE_KEY"
+      },
+      "fallbackProviders": ["mock-maps"]
+    }
+  },
+  {
+    "id": "mcp.browser",
+    "name": "Browser MCP",
+    "description": "Provides web retrieval for fresh facts and public web pages.",
+    "capabilities": ["search latest information", "summarize web pages", "ground answers in retrieval"],
+    "modes": ["web"],
+    "enabled": true,
+    "adapter": "browser",
+    "provider": {
+      "name": "tavily",
+      "transport": "http",
+      "baseUrl": "https://api.tavily.com",
+      "auth": {
+        "type": "apiKey",
+        "envKey": "TAVILY_API_KEY"
+      },
+      "fallbackProviders": ["mock-browser"]
+    }
+  },
+  {
+    "id": "mcp.workspace",
+    "name": "Workspace MCP",
+    "description": "Provides attachment and local knowledge access.",
+    "capabilities": ["read uploaded text context", "inspect structured local knowledge", "prepare material for summarization"],
+    "modes": ["default", "web", "nearby"],
+    "enabled": true,
+    "adapter": "workspace",
+    "provider": {
+      "name": "local-workspace",
+      "transport": "mock",
+      "auth": {
+        "type": "none"
+      }
+    }
+  }
+]

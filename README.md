@@ -113,20 +113,6 @@ Streaming Events
     ▼
 Frontend UI
 ```
-
-一次完整请求的处理流程如下：
-
-1. 接收用户输入、运行模式和附件。
-2. 根据请求内容选择需要激活的 Skills。
-3. 根据运行模式解析本轮允许使用的 MCP 能力。
-4. 创建 Run ID 和 Harness Trace。
-5. 拼装系统指令、Skill 指令和能力上下文。
-6. 执行 Agent，并按需调用工具。
-7. 将文本、工具状态和运行元数据流式发送给前端。
-8. 前端更新聊天内容和 Agent Runtime 卡片。
-
----
-
 ## 核心模块
 
 ### Skills Registry
@@ -447,20 +433,6 @@ Harness
 * 评测能力
 
 ---
-
-## 当前限制
-
-当前版本仍然属于 Agent Demo，存在以下限制：
-
-1. MCP Registry 是项目内部实现的能力目录，不是真实的外部 MCP Server。
-2. Harness 主要记录运行信息，尚未形成完整的自动化评测闭环。
-3. Skills 当前直接维护在 TypeScript 文件中，暂未实现独立文件加载和版本管理。
-4. Agent 仍然以单 Agent 为主，尚未拆分 Planner、Executor 和 Reporter。
-5. 对话历史压缩、长期记忆和 RAG 能力仍可继续完善。
-6. 第三方工具的稳定性依赖对应 API 服务。
-
----
-
 ## 后续规划
 
 ### 真实 MCP 接入
